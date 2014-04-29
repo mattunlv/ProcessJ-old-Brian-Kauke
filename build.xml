@@ -5,11 +5,11 @@
 	<property name="dist" value="dist" />
 	<property name="src" location="src/main/java"/>
 	<property name="build" value="bin" />
-	<property name="cupJar" location="deps/java_cup.jar"/>
-	<property name="cupRuntimeJar" location="deps/java_cup_runtime.jar"/>
-	<property name="jflexJar" location="deps/JFlex.jar"/>
-	<property name="stringtemplatejar" location="deps/ST-4.0.7.jar"/>
-        <property name="classpath" value="${cupJar}:${cupRuntimeJar}:${jflexJar}:${stringeplatejar}:."/>
+	<property name="cup.jarpath" location="deps/java-cup-11b.jar"/>
+	<property name="cup.runtime.jarpath" location="deps/java-cup-11b-runtime.jar"/>
+	<property name="jflex.jarpath" location="deps/jflex-1.5.1.jar"/>
+	<!--property name="stringtemplate.jarpath" location="deps/ST-4.0.7.jar"/-->
+        <property name="classpath" value="${cup.jarpath}:${cup.runtime.jarpath}:${jflex.jarpath}:."/>
 	<description>
 		Build File for Processj Compiler Project
 	</description>
@@ -29,7 +29,7 @@
 	</target>
 	
 	<target name="parser">
-		<java jar="${cupJar}" input="src/main/cup/ProcessJ.cup" fork="true" failonerror="true">
+		<java jar="${cup.jarpath}" input="src/main/cup/ProcessJ.cup" fork="true" failonerror="true">
 			<arg value="-package"/>
 			<arg value="Parser"/>
 		</java>
@@ -38,7 +38,7 @@
 	</target>
 		
 	<target name="scanner">
-		<java jar="${jflexJar}" fork="true" failonerror="true">
+		<java jar="${jflex.jarpath}" fork="true" failonerror="true">
 			<arg value="-d"/>
 			<arg value="${src}/Scanner"/>
 			<arg value="src/main/flex/ProcessJ.flex"/>
