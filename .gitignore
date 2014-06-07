@@ -5,7 +5,7 @@
 bin/
 logs/
 misc/
-src/main/java/Scanner/scanner.java
+src/main/java/Scanner/Scanner.java
 src/main/java/Parser/parser.java
 src/main/java/Parser/sym.java
 doc/**/*.log
