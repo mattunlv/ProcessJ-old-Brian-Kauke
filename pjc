@@ -1,1 +1,1 @@
-java -cp bin:deps/java_cup_runtime.jar:. ProcessJc $@
+java -cp bin:deps/java-cup-11b-runtime.jar:. ProcessJc $@
